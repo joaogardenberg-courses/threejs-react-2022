@@ -1,13 +1,8 @@
 import { useBox } from '@react-three/cannon'
+import Floor from './Floor'
 
-export default function Floor(props) {
+export default function PhysicalFloor(props) {
   const args = [20, 1, 10]
   const [ref] = useBox(() => ({ args, ...props }))
-
-  return (
-    <mesh receiveShadow {...props} ref={ref}>
-      <boxBufferGeometry args={args} />
-      <meshPhysicalMaterial />
-    </mesh>
-  )
+  return <Floor geometryArgs={args} ref={ref} />
 }
