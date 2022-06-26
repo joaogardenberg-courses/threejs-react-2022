@@ -18,7 +18,7 @@ const Box = (props) => {
   })
 
   return (
-    <mesh ref={ref} {...props}>
+    <mesh ref={ref} castShadow receiveShadow {...props}>
       <boxBufferGeometry />
       <meshPhysicalMaterial color="blue" />
     </mesh>
@@ -27,9 +27,19 @@ const Box = (props) => {
 
 const Floor = (props) => {
   return (
+    <mesh {...props} receiveShadow>
+      <boxBufferGeometry args={[20, 1, 10]} />
+      <meshPhysicalMaterial />
+    </mesh>
+  )
+}
+
+const Bulb = (props) => {
+  return (
     <mesh {...props}>
-      <boxBufferGeometry args={[]} />
-      <meshBasicMaterial />
+      <pointLight castShadow />
+      <sphereBufferGeometry args={[0.2, 20, 20]} />
+      <meshPhongMaterial emissive="yellow" />
     </mesh>
   )
 }
@@ -37,11 +47,17 @@ const Floor = (props) => {
 const App = () => {
   return (
     <div style={{ height: '100vh', width: '100vw' }}>
-      <Canvas style={{ background: 'black' }} camera={{ position: [3, 3, 3] }}>
+      <Canvas
+        style={{ background: 'black' }}
+        camera={{ position: [3, 3, 3] }}
+        shadows
+      >
         <Orbit />
-        <axesHelper args={[3]} />`
-        <ambientLight intensity={0.5} />
+        <axesHelper args={[3]} />
+        <ambientLight intensity={0.2} />
+        <Bulb position={[0, 3, 0]} />
         <Box position={[-1, 1, 2]} />
+        <Floor position={[0, -0.5, 0]} />
       </Canvas>
     </div>
   )
