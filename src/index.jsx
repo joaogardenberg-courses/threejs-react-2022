@@ -13,7 +13,8 @@ import reportWebVitals from './reportWebVitals'
 // import App from './10-camera-panning'
 // import App from './11-change-paint'
 // import App from './12-model-shadows'
-import App from './13-postprocessing'
+// import App from './13-postprocessing'
+import App from './14-animations'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
