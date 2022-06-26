@@ -22,13 +22,13 @@ const App = () => {
         <Orbit />
         <axesHelper args={[3]} />
         <ambientLight intensity={0.2} />
+        <Draggable>
+          <Bulb position={[0, 3, 0]} />
+        </Draggable>
         {/* <fog attach="fog" args={['white', 1, 10]} /> */}
         <Background />
         <Physics>
           <PhysicalFloor position={[0, -0.5, 0]} />
-          <Draggable>
-            <Bulb position={[0, 3, 0]} />
-          </Draggable>
           <Cars />
         </Physics>
       </Canvas>

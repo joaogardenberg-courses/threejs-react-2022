@@ -16,10 +16,10 @@ const App = () => {
         <Orbit />
         <axesHelper args={[3]} />
         <ambientLight intensity={0.2} />
+        <Bulb position={[0, 3, 0]} />
         {/* <fog attach="fog" args={['white', 1, 10]} /> */}
         <Background />
         <Floor position={[0, -0.5, 0]} />
-        <Bulb position={[0, 3, 0]} />
         <World position={[0, 1, 0]} />
       </Canvas>
     </div>
