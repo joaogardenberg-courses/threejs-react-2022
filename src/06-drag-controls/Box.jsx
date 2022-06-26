@@ -1,6 +1,7 @@
 import { Suspense, useRef } from 'react'
 import { TextureLoader } from 'three'
 import { useFrame, useLoader } from '@react-three/fiber'
+import state from '../state'
 
 export default function Box(props) {
   const ref = useRef()
@@ -16,14 +17,14 @@ export default function Box(props) {
   const scaleDown = (mesh) => mesh.scale.set(1, 1, 1)
 
   const handlePointerDown = (e) => {
-    if (window.activeMesh) {
-      window.activeMesh.active = false
-      scaleDown(window.activeMesh)
+    if (state.activeMesh) {
+      state.activeMesh.active = false
+      scaleDown(state.activeMesh)
     }
 
     e.object.active = true
     scaleUp(e.object)
-    window.activeMesh = e.object
+    state.activeMesh = e.object
   }
 
   const handlePointerEnter = (e) => e.object.active || scaleUp(e.object)

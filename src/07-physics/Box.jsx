@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import { TextureLoader } from 'three'
 import { useLoader } from '@react-three/fiber'
 import { useBox } from '@react-three/cannon'
+import state from '../state'
 
 export default function Box(props) {
   const [ref, api] = useBox(() => ({ mass: 1, ...props }))
@@ -12,14 +13,14 @@ export default function Box(props) {
   const opacify = (mesh) => (mesh.material.opacity = 1)
 
   const handlePointerDown = (e) => {
-    if (window.activeMesh) {
-      window.activeMesh.active = false
-      opacify(window.activeMesh)
+    if (state.activeMesh) {
+      state.activeMesh.active = false
+      opacify(state.activeMesh)
     }
 
     e.object.active = true
     transparentize(e.object)
-    window.activeMesh = e.object
+    state.activeMesh = e.object
   }
 
   const handlePointerEnter = (e) => e.object.active || transparentize(e.object)
