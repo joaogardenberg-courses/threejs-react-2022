@@ -4,7 +4,8 @@ import reportWebVitals from './reportWebVitals'
 // import Geometry from './01-geometry'
 // import LightsShadows from './02-lights-shadows'
 // import Materials from './03-materials'
-import Textures from './04-textures'
+// import Textures from './04-textures'
+import Events from './05-events'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -12,7 +13,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Geometry /> */}
     {/* <LightsShadows /> */}
     {/* <Materials /> */}
-    <Textures />
+    {/* <Textures /> */}
+    <Events />
   </React.StrictMode>
 )
 
