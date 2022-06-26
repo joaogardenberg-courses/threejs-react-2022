@@ -9,7 +9,8 @@ import reportWebVitals from './reportWebVitals'
 // import App from './06-drag-controls'
 // import App from './07-physics'
 // import App from './08-models'
-import App from './09-bounding-boxes'
+// import App from './09-bounding-boxes'
+import App from './10-camera-panning'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
