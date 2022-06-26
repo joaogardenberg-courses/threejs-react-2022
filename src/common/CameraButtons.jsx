@@ -1,4 +1,3 @@
-import { Vector3 } from 'three'
 import state from '../state'
 
 const style = {
@@ -19,13 +18,14 @@ const style = {
 
 export default function CameraButtons() {
   const sets = [
-    { cameraPos: [1, 2, 5], target: [-4, 0, 0] },
-    { cameraPos: [9, 2, 4], target: [4, 0, 0] }
+    { cameraPos: [1, 2, 5], target: [-4, 0, 0], name: 'object005_bod_0' },
+    { cameraPos: [9, 2, 4], target: [4, 0, 0], name: 'Capot001_CAR_PAINT_0' }
   ]
 
   const handleClick = (num) => {
     state.cameraPos.set(...sets[num].cameraPos)
     state.target.set(...sets[num].target)
+    state.activeMeshName = sets[num].name
     state.shouldUpdate = true
   }
 

@@ -3,6 +3,10 @@ import state from '../state'
 
 export default function CameraControls() {
   useFrame(({ camera, scene }) => {
+    if (state.activeMesh?.name !== state.activeMeshName) {
+      state.activeMesh = scene.getObjectByName(state.activeMeshName)
+    }
+
     if (state.shouldUpdate) {
       camera.position.lerp(state.cameraPos, 0.1)
       scene.orbitControls.target.lerp(state.target, 0.1)
