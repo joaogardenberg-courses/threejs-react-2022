@@ -5,7 +5,7 @@ import Orbit from '../common/Orbit'
 import Bulb from '../common/Bulb'
 import Background from '../common/Background'
 import Draggable from '../common/Draggable'
-import Floor from './Floor'
+import PhysicalFloor from '../common/PhysicalFloor'
 import Box from './Box'
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
         {/* <fog attach="fog" args={['white', 1, 10]} /> */}
         <Background />
         <Physics>
-          <Floor position={[0, -0.5, 0]} />
+          <PhysicalFloor position={[0, -0.5, 0]} />
           <Draggable>
             <Bulb position={[0, 3, 0]} />
             <Box position={[-4, 1, 0]} />

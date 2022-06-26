@@ -5,9 +5,8 @@ import Orbit from '../common/Orbit'
 import Bulb from '../common/Bulb'
 import Background from '../common/Background'
 import Draggable from '../common/Draggable'
-import Model from '../common/Model'
-import BoundingBox from '../common/BoundingBox'
-import Floor from './Floor'
+import PhysicalFloor from '../common/PhysicalFloor'
+import Cars from '../common/Cars'
 
 const App = () => {
   return (
@@ -24,31 +23,11 @@ const App = () => {
         {/* <fog attach="fog" args={['white', 1, 10]} /> */}
         <Background />
         <Physics>
-          <Floor position={[0, -0.5, 0]} />
+          <PhysicalFloor position={[0, -0.5, 0]} />
           <Draggable>
             <Bulb position={[0, 3, 0]} />
           </Draggable>
-          <Draggable transformGroup>
-            <BoundingBox
-              position={[4, 4, 0]}
-              dims={[3, 2, 6.1]}
-              offset={[0, -0.4, 0.75]}
-            >
-              <Model
-                path="/tesla_model_3/scene.gltf"
-                scale={[0.01, 0.01, 0.01]}
-              />
-            </BoundingBox>
-          </Draggable>
-          <Draggable transformGroup>
-            <BoundingBox
-              position={[-4, 4, 0]}
-              dims={[3, 2, 6.8]}
-              offset={[0, -0.8, 0.2]}
-            >
-              <Model path="/tesla_model_S/scene.gltf" scale={[0.8, 0.8, 0.8]} />
-            </BoundingBox>
-          </Draggable>
+          <Cars />
         </Physics>
       </Canvas>
     </div>
