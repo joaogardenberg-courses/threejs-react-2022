@@ -1,32 +1,10 @@
-import { useMemo, useRef } from 'react'
-import { Canvas, extend, useFrame, useThree } from '@react-three/fiber'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { useMemo } from 'react'
 import { BufferAttribute, DoubleSide } from 'three'
+import { Canvas } from '@react-three/fiber'
+import Orbit from '../common/Orbit'
+import Box from './Box'
 
-extend({ OrbitControls })
-
-const Orbit = () => {
-  const { camera, gl } = useThree()
-  return <orbitControls args={[camera, gl.domElement]} />
-}
-
-const Box = (props) => {
-  const ref = useRef()
-
-  useFrame(() => {
-    ref.current.rotation.x += 0.01
-    ref.current.rotation.y += 0.01
-  })
-
-  return (
-    <mesh ref={ref} {...props}>
-      <boxBufferGeometry />
-      <meshBasicMaterial color="blue" />
-    </mesh>
-  )
-}
-
-const App = () => {
+export default function App() {
   const vertices = useMemo(
     () =>
       new BufferAttribute(new Float32Array([0, 0, 0, 0, 1, 1, 0, 1, -1]), 3),
@@ -55,5 +33,3 @@ const App = () => {
     </div>
   )
 }
-
-export default App
