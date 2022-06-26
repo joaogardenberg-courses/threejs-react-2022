@@ -2,7 +2,7 @@ import Draggable from '../common/Draggable'
 import Model from '../common/Model'
 import BoundingBox from '../common/BoundingBox'
 
-export default function Cars() {
+export default function Cars({ visibleBoundingBoxes }) {
   return (
     <>
       <Draggable transformGroup>
@@ -10,6 +10,7 @@ export default function Cars() {
           position={[4, 4, 0]}
           dims={[3, 2, 6.1]}
           offset={[0, -0.4, 0.75]}
+          visible={visibleBoundingBoxes}
         >
           <Model path="/tesla_model_3/scene.gltf" scale={[0.01, 0.01, 0.01]} />
         </BoundingBox>
@@ -19,6 +20,7 @@ export default function Cars() {
           position={[-4, 4, 0]}
           dims={[3, 2, 6.8]}
           offset={[0, -0.8, 0.2]}
+          visible={visibleBoundingBoxes}
         >
           <Model path="/tesla_model_S/scene.gltf" scale={[0.8, 0.8, 0.8]} />
         </BoundingBox>

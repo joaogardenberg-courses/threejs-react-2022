@@ -25,7 +25,7 @@ const App = () => {
           <Draggable>
             <Bulb position={[0, 3, 0]} />
           </Draggable>
-          <Cars />
+          <Cars visibleBoundingBoxes />
         </Physics>
       </Canvas>
     </div>
