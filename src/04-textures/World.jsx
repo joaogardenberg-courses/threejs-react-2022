@@ -13,7 +13,7 @@ export default function World(props) {
 
   return (
     <Suspense fallback={null}>
-      <mesh ref={ref} castShadow receiveShadow {...props}>
+      <mesh castShadow receiveShadow {...props} ref={ref}>
         <sphereBufferGeometry args={[1, 100, 100]} />
         <meshPhysicalMaterial map={texture} />
       </mesh>

@@ -33,12 +33,12 @@ export default function Box(props) {
   return (
     <Suspense fallback={null}>
       <mesh
-        ref={ref}
         castShadow
+        {...props}
+        ref={ref}
         onPointerDown={handlePointerDown}
         onPointerEnter={handlePointerEnter}
         onPointerLeave={handlePointerLeave}
-        {...props}
       >
         <boxBufferGeometry args={[1, 1, 1]} />
         <meshPhysicalMaterial map={texture} />

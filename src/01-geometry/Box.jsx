@@ -10,7 +10,7 @@ export default function Box(props) {
   })
 
   return (
-    <mesh ref={ref} {...props}>
+    <mesh {...props} ref={ref}>
       <boxBufferGeometry />
       <meshBasicMaterial color="blue" />
     </mesh>
