@@ -1,6 +1,5 @@
 import { Canvas } from '@react-three/fiber'
 import { Physics } from '@react-three/cannon'
-import ColorPicker from '../common/ColorPicker'
 import Orbit from '../common/Orbit'
 import Bulb from '../common/Bulb'
 import Background from '../common/Background'
@@ -11,7 +10,6 @@ import PhysicalFloor from '../common/PhysicalFloor'
 const App = () => {
   return (
     <div style={{ height: '100vh', width: '100vw' }}>
-      <ColorPicker />
       <Canvas
         style={{ background: 'black' }}
         camera={{ position: [7, 7, 7] }}

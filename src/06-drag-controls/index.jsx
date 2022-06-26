@@ -1,5 +1,4 @@
 import { Canvas } from '@react-three/fiber'
-import ColorPicker from '../common/ColorPicker'
 import Orbit from '../common/Orbit'
 import Bulb from '../common/Bulb'
 import Floor from '../common/Floor'
@@ -10,7 +9,6 @@ import Box from './Box'
 const App = () => {
   return (
     <div style={{ height: '100vh', width: '100vw' }}>
-      <ColorPicker />
       <Canvas
         style={{ background: 'black' }}
         camera={{ position: [7, 7, 7] }}
