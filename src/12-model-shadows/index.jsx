@@ -1,14 +1,13 @@
 import { Canvas } from '@react-three/fiber'
 import { Physics } from '@react-three/cannon'
 import Orbit from '../common/Orbit'
-import Bulb from '../common/Bulb'
 import Background from '../common/Background'
-import Draggable from '../common/Draggable'
 import PhysicalFloor from '../common/PhysicalFloor'
 import Cars from '../common/Cars'
 import CameraControls from '../common/CameraControls'
 import CameraButtons from '../common/CameraButtons'
 import ColorPicker from '../common/ColorPicker'
+import Lights from '../common/Lights'
 
 const App = () => {
   return (
@@ -23,24 +22,11 @@ const App = () => {
         <CameraControls />
         <Orbit />
         <axesHelper args={[3]} />
-        <ambientLight intensity={0.2} />
-        <directionalLight
-          position={[6, 3, 0]}
-          intensity={2}
-          castShadow
-          shadow-mapSize-height={1024}
-          shadow-mapSize-width={1024}
-          shadow-radius={10}
-        />
+        <Lights />
         {/* <fog attach="fog" args={['white', 1, 10]} /> */}
         <Background />
         <Physics>
           <PhysicalFloor position={[0, -0.5, 0]} />
-          <Draggable>
-            <Bulb position={[-6, 3, 0]} />
-            <Bulb position={[0, 3, 0]} />
-            <Bulb position={[6, 3, 0]} />
-          </Draggable>
           <Cars />
         </Physics>
       </Canvas>
